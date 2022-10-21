@@ -1,31 +1,38 @@
 import React, {useState, useEffect} from "react";
+import { useSelector, useDispatch } from 'react-redux';
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import Scroll from "../components/Scroll.js";
 import ErrorBoundary from "../components/ErrorBoundary";
 import './App.css';
 
+import { setSearchField, requestRobots } from "../actions";
+
 const App = () => {
-    const [robots, setRobots] = useState([]);
-    const [searchfield, setSearchfield] = useState("");
+
     const [count, setCount] = useState(0);
+    // redux state here using hooks define the selector which is equivalent to mapStateToProps
+    const searchField = useSelector(state => state.searchRobots.searchField);
+    const robots = useSelector(state => state.requestRobots.robots);
+    const isPending = useSelector(state => state.requestRobots.isPending);
+    const error = useSelector(state => state.requestRobots.error);
 
+    // redux dispatch here using hooks, dispatch is equivalent to mapDispatchToProps
+    const dispatch = useDispatch();
+    const onSearchChange = (event) => {dispatch({type: 'CHANGE_SEARCHFIELD', payload: event.target.value})};
+    const onRequestRobots = () => dispatch(requestRobots());
+    
     useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/users")
-            .then(response => response.json())
-            .then(users => setRobots(users))
-            .catch(error => console.log(error));
-    }, [count]); // only run the effect if count changes
 
-    const onSearchChange = (event) => {
-        setSearchfield(event.target.value);
-    }
+        onRequestRobots();
+
+    }, []); // only run the effect if count changes
 
     const filteredRobots = robots.filter(robot => {
-        return robot.name.toLowerCase().includes(searchfield.toLowerCase());
+        return robot.name.toLowerCase().includes(searchField.toLowerCase());
     });
 
-        return (!robots.length) ? 
+    return (isPending) ? 
         <h1>Loading</h1> :
     (
         <div className="tc">
@@ -34,11 +41,11 @@ const App = () => {
             <SearchBox searchChange={onSearchChange} />
             <Scroll>
                 <ErrorBoundary>
-                <CardList robots={ filteredRobots } />
+                    <CardList robots={ filteredRobots } />
                 </ErrorBoundary>
             </Scroll>
         </div>
     )
 }
 
-export default App
+export default App;
