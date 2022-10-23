@@ -5,25 +5,23 @@ import SearchBox from "../components/SearchBox";
 import Scroll from "../components/Scroll.js";
 import ErrorBoundary from "../components/ErrorBoundary";
 import './App.css';
-
-import { setSearchField, requestRobots } from "../actions";
+import { requestRobots } from "../request-robots";
 
 const App = () => {
 
     const [count, setCount] = useState(0);
     // redux state here using hooks define the selector which is equivalent to mapStateToProps
-    const searchField = useSelector(state => state.searchRobots.searchField);
-    const robots = useSelector(state => state.requestRobots.robots);
-    const isPending = useSelector(state => state.requestRobots.isPending);
-    const error = useSelector(state => state.requestRobots.error);
+    const { searchField }= useSelector(state => state.searchRobots);
+    const { robots, isPending, error } = useSelector(state => state.requestRobots);
 
     // redux dispatch here using hooks, dispatch is equivalent to mapDispatchToProps
     const dispatch = useDispatch();
-    const onSearchChange = (event) => {dispatch({type: 'CHANGE_SEARCHFIELD', payload: event.target.value})};
+    // to handle the events of search changes
+    const onSearchChange = (event) => {dispatch({type: 'searchRobots/CHANGE_SEARCHFIELD', payload: event.target.value})};
+    // handling the requests of the data
     const onRequestRobots = () => dispatch(requestRobots());
     
     useEffect(() => {
-
         onRequestRobots();
 
     }, []); // only run the effect if count changes
@@ -31,7 +29,7 @@ const App = () => {
     const filteredRobots = robots.filter(robot => {
         return robot.name.toLowerCase().includes(searchField.toLowerCase());
     });
-
+    
     return (isPending) ? 
         <h1>Loading</h1> :
     (
