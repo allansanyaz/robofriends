@@ -1,14 +1,15 @@
 import React from "react";
 import Card from "./Card";
+import { IRobotState } from "../store/request-robots";
 
-const CardList = ({ robots }) => {
+const CardList = ({ robots }: IRobotState) => {
     
     return (
         // Everything seems to need a div Tag unless it is a Fragment
         <div>
             {
                 // ensure that this expression always returns something
-                robots.map((user, i) => {
+                robots.map((_, i: number) => {
                     return (
                         // The Card.js item constructs our card and here wejust loop to call it to make things as modular as possible
                         // JSX used to return HTML elements

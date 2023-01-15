@@ -1,3 +1,5 @@
+import { IRobotData } from "./store/request-robots";
+
 export const robots = [
     {
       id: 1,
@@ -59,5 +61,5 @@ export const robots = [
       username: 'Moriah.Stanton',
       email: 'Rey.Padberg@karina.biz'
     }
-  ];
+  ] as IRobotData[];
   
