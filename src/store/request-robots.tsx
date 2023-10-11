@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, ActionReducerMapBuilder, SerializedError } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, SerializedError } from "@reduxjs/toolkit";
 
 export interface IRobotData {
     id: number;
