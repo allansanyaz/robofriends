@@ -50,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/redux-logger": "^3.0.9",
     "redux-logger": "^3.0.6",
     "ts-jest": "^29.2.5"
