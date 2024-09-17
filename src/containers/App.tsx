@@ -26,18 +26,14 @@ const App = () => {
         dispatch(searchRobots(event.target.value))
     };
     // handling the requests of the data
-    const onRequestRobots = () => dispatch(requestRobots('https://jsonplaceholder.typicode.com/users'));
     
     useEffect(() => {
-        if(!robots.length) {
-            // initilise the request
-            onRequestRobots();
-        } else {
-            // set the filtered robots
-            setFilteredRobots(robots);
-        }
+        dispatch(requestRobots('https://jsonplaceholder.typicode.com/users'));
+    }, []); // only run the effect if count changes
 
-    }, [isPending]); // only run the effect if count changes
+    useEffect(() => {
+        setFilteredRobots(robots);
+    }, [isPending]);
 
     
     useEffect(() => {
