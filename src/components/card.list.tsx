@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./card";
+import CardComponent from "./card";
 import { IRobotState } from "../store/request-robots";
 
 const CardList = ({ robots }: IRobotState) => {
@@ -14,7 +14,7 @@ const CardList = ({ robots }: IRobotState) => {
                         // The Card.js item constructs our card and here wejust loop to call it to make things as modular as possible
                         // JSX used to return HTML elements
                         // The key is neccessary to compute incase items get deleted
-                        <Card 
+                        <CardComponent 
                             key={i} 
                             id={robots[i].id}
                             name={robots[i].name} 

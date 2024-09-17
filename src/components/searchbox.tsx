@@ -21,4 +21,4 @@ const SearchBox = ({ searchChange }: ISearchBoxProps) => {
     );
 }
 
-export default SearchBox
+export default SearchBox;
