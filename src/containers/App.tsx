@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
-import { useSelector, useDispatch } from 'react-redux';
-import CardList from "../components/CardList";
-import SearchBox from "../components/SearchBox";
-import Scroll from "../components/Scroll";
-import ErrorBoundary from "../components/ErrorBoundary.js";
+import { useSelector, useDispatch } from "react-redux";
+import CardList from "../components/card.list";
+import SearchBox from "../components/searchbox";
+import Scroll from "../components/scroll";
+import ErrorBoundary from "../components/errorboundary";
 import './App.css';
 import { requestRobots } from "../store/request-robots";
 import { searchRobots } from "../store/robot-slice";
@@ -26,18 +26,14 @@ const App = () => {
         dispatch(searchRobots(event.target.value))
     };
     // handling the requests of the data
-    const onRequestRobots = () => dispatch(requestRobots('https://jsonplaceholder.typicode.com/users'));
     
     useEffect(() => {
-        if(!robots.length) {
-            // initilise the request
-            onRequestRobots();
-        } else {
-            // set the filtered robots
-            setFilteredRobots(robots);
-        }
+        dispatch(requestRobots('https://jsonplaceholder.typicode.com/users'));
+    }, []); // only run the effect if count changes
 
-    }, [isPending]); // only run the effect if count changes
+    useEffect(() => {
+        setFilteredRobots(robots);
+    }, [isPending]);
 
     
     useEffect(() => {
@@ -49,9 +45,9 @@ const App = () => {
 
     },[searchField]);
     
-    return (isPending) ? 
+    return (
+        (isPending) ? 
         <h1>Loading</h1> :
-    (
         <div className="tc">
             <h1 className="f1">RoboFriends</h1>
             <SearchBox searchChange={onSearchChange} />
