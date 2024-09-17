@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
-import { useSelector, useDispatch } from 'react-redux';
-import CardList from "../components/CardList";
-import SearchBox from "../components/SearchBox";
-import Scroll from "../components/Scroll";
-import ErrorBoundary from "../components/ErrorBoundary.js";
+import { useSelector, useDispatch } from "react-redux";
+import CardList from "../components/card.list";
+import SearchBox from "../components/searchbox";
+import Scroll from "../components/scroll";
+import ErrorBoundary from "../components/errorboundary";
 import './App.css';
 import { requestRobots } from "../store/request-robots";
 import { searchRobots } from "../store/robot-slice";
