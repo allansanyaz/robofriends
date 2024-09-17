@@ -17,7 +17,7 @@ export const setupStore = (preloadedState: Partial<RootState>) => {
         reducer: rootReducer,
         preloadedState,
         middleware: (getDefaultMiddleware) => {
-            return (!isProduction) ? getDefaultMiddleware().concat(logger) : getDefaultMiddleware();
+            return (!isProduction) ? getDefaultMiddleware().concat() : getDefaultMiddleware();
         }
     });
 }
