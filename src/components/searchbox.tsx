@@ -14,6 +14,7 @@ const SearchBox = ({ searchChange }: ISearchBoxProps) => {
     return (
         <input 
             className="pa3 ba b--green bg-lightest-blue"
+            name="searchbox"
             type="search"
             placeholder="search robots"
             onChange={(e) => searchChange(e)}

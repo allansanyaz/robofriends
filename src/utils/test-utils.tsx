@@ -16,7 +16,8 @@ const renderWithProviders = (
         // create a store instance if no store was passed in
         store = setupStore(preloadedState),
         ...renderOptions
-    }: ExtendedRenderOptions = {}) => {
+    }: ExtendedRenderOptions = {}
+) => {
     
     const Wrapper = ({ children }: PropsWithChildren<{}>): JSX.Element => {
         return <Provider store={store}>{children}</Provider>;
