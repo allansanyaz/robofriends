@@ -10,6 +10,7 @@ import { searchRobots } from "../store/robot-slice";
 import { searchSelector, robotsSelector } from "../store/selectors";
 import { AppDispatch } from "../store/store";
 import { IRobotData } from "../store/request-robots";
+import CountButtonComponent from "components/count";
 
 const App = () => {
 
@@ -50,6 +51,7 @@ const App = () => {
         <h1>Loading</h1> :
         <div className="tc">
             <h1 className="f1">RoboFriends</h1>
+            <CountButtonComponent />
             <SearchBox searchChange={onSearchChange} />
             <Scroll>
                 <ErrorBoundary>
