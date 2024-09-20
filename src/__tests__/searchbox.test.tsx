@@ -1,6 +1,5 @@
 import React from 'react';
-import { screen } from '@testing-library/react';
-import renderWithProviders from '../utils/test-utils';
+import { screen, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { describe, expect, test } from "@jest/globals";
 import App from '../containers/App';
@@ -9,8 +8,11 @@ import SearchBox from '../components/searchbox';
 
 describe('Test typing in the searchbox', () => {
     test('Checking to see if the searchbox is typing', async() => {
-        renderWithProviders(<App />)
 
+        const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>): void => {}
+
+        render(<SearchBox searchChange={onSearchChange} />);
+        expect.assertions(1);
         // assert that the searchbox is rendered
         const searchbox: HTMLInputElement = await screen.findByPlaceholderText('search robots');
 

@@ -5,6 +5,7 @@ const jestConfig: JestConfigWithTsJest = {
     // [...]
     ...createDefaultPreset(),
     preset: "ts-jest",
+    testEnvironment: 'jsdom',
     setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
 }
 
