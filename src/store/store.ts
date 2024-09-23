@@ -29,7 +29,8 @@ export type AppDispatch = typeof store.dispatch;
 // only call hooks in components
 export const useAppDispatch: () => AppDispatch = useDispatch
 
+export type AppStore = ReturnType<typeof setupStore>
 // initialize the store
-const store: ReturnType<typeof setupStore> = setupStore({});
+const store: AppStore = setupStore({});
 // export the store
 export default store;

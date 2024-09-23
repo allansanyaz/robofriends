@@ -1,40 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1726819537299" clover="3.2.0">
-  <project timestamp="1726819537299" name="All files">
-    <metrics statements="23" coveredstatements="23" conditionals="5" coveredconditionals="5" methods="10" coveredmethods="10" elements="38" coveredelements="38" complexity="0" loc="23" ncloc="23" packages="3" files="3" classes="3"/>
+<coverage generated="1727080065100" clover="3.2.0">
+  <project timestamp="1727080065100" name="All files">
+    <metrics statements="43" coveredstatements="31" conditionals="7" coveredconditionals="5" methods="19" coveredmethods="11" elements="69" coveredelements="47" complexity="0" loc="43" ncloc="43" packages="4" files="7" classes="7"/>
     <package name="components">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="searchbox.tsx" path="/home/alsanyaz/Portfolio/robofriends/src/components/searchbox.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="14" count="29" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
         <line num="20" count="13" type="stmt"/>
       </file>
     </package>
     <package name="containers">
-      <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="6"/>
+      <metrics statements="14" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="3"/>
       <file name="App.tsx" path="/home/alsanyaz/Portfolio/robofriends/src/containers/App.tsx">
-        <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="6"/>
+        <metrics statements="14" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="3"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="44" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="store">
+      <metrics statements="20" coveredstatements="12" conditionals="2" coveredconditionals="0" methods="10" coveredmethods="4"/>
+      <file name="request-robots.tsx" path="/home/alsanyaz/Portfolio/robofriends/src/store/request-robots.tsx">
+        <metrics statements="14" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="7" coveredmethods="3"/>
+        <line num="11" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
-        <line num="17" count="31" type="stmt"/>
-        <line num="18" count="31" type="stmt"/>
-        <line num="19" count="31" type="stmt"/>
-        <line num="23" count="31" type="stmt"/>
-        <line num="25" count="31" type="stmt"/>
-        <line num="26" count="13" type="stmt"/>
-        <line num="30" count="31" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="34" count="31" type="stmt"/>
-        <line num="35" count="3" type="stmt"/>
-        <line num="39" count="31" type="stmt"/>
-        <line num="40" count="14" type="stmt"/>
-        <line num="41" count="130" type="stmt"/>
-        <line num="44" count="14" type="stmt"/>
-        <line num="48" count="31" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="53" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+      </file>
+      <file name="robot-slice.tsx" path="/home/alsanyaz/Portfolio/robofriends/src/store/robot-slice.tsx">
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+      </file>
+      <file name="selectors.ts" path="/home/alsanyaz/Portfolio/robofriends/src/store/selectors.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
       </file>
     </package>
     <package name="utils">
-      <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <metrics statements="6" coveredstatements="6" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <file name="dummy.data.ts" path="/home/alsanyaz/Portfolio/robofriends/src/utils/dummy.data.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
       <file name="test-utils.tsx" path="/home/alsanyaz/Portfolio/robofriends/src/utils/test-utils.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="12" count="1" type="stmt"/>

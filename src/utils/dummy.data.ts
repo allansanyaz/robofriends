@@ -1,6 +1,6 @@
 export const cardData = {
-    name: "John Doe",
-    email: "john@doe.com",
+    name: "John Wick",
+    email: "john@wick.com",
     id: 1
 }
 

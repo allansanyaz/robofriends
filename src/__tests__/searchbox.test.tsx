@@ -6,10 +6,14 @@ import App from '../containers/App';
 import userEvent from '@testing-library/user-event';
 import SearchBox from '../components/searchbox';
 
+let onSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+beforeEach(() => {
+    onSearchChange = (event: React.ChangeEvent<HTMLInputElement>): void => {}
+});
+
 describe('Test typing in the searchbox', () => {
     test('Checking to see if the searchbox is typing', async() => {
-
-        const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>): void => {}
 
         render(<SearchBox searchChange={onSearchChange} />);
         expect.assertions(1);

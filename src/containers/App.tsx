@@ -16,7 +16,6 @@ const App = () => {
 
     // redux state here using hooks define the selector which is equivalent to mapStateToProps
     const { robots, isPending, error } = useSelector(robotsSelector);
-    const { searchField } = useSelector(searchSelector);
     const [filteredRobots, setFilteredRobots] = useState<IRobotData[]>(robots);
     
     // redux dispatch here using hooks, dispatch is equivalent to mapDispatchToProps
@@ -25,6 +24,12 @@ const App = () => {
     // to handle the events of search changes
     const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
         dispatch(searchRobots(event.target.value))
+
+        const searchedRobots = robots.filter((robot: IRobotData) => {
+            return robot.name.toLowerCase().includes(event.target.value.toLowerCase());
+        });
+        // set the filtered robots
+        setFilteredRobots(searchedRobots);
     };
     // handling the requests of the data
     
@@ -35,16 +40,6 @@ const App = () => {
     useEffect(() => {
         setFilteredRobots(robots);
     }, [isPending]);
-
-    
-    useEffect(() => {
-        const searchedRobots = robots.filter((robot: IRobotData) => {
-            return robot.name.toLowerCase().includes(searchField.toLowerCase());
-        });
-        // set the filtered robots
-        setFilteredRobots(searchedRobots);
-
-    },[searchField]);
     
     return (
         (isPending) ? 
